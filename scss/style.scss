@@ -2,7 +2,7 @@
 @use "sass:math";
 
 $Blue: hsl(246, 80%, 60%);
-$Light-red: hsl(15, 100%, 70%);
+$Light-orange: hsl(15, 100%, 70%);
 $Soft-blue: hsl(195, 74%, 62%);
 $Light-red: hsl(348, 100%, 68%);
 $Lime-green: hsl(145, 58%, 55%);
@@ -13,33 +13,73 @@ $Dark-blue: hsl(235, 46%, 20%);
 $Desaturated-blue: hsl(235, 45%, 61%);
 $Pale-Blue: hsl(236, 100%, 87%);
 
-$Font-Rubik: 'Rubik', sans-serif;
+$Font-Rubik: 'Rubik',
+sans-serif;
 
-@mixin flx($property, $jty-cnt){
+@mixin flx($property, $jty-cnt) {
     display: flex;
     #{$property}: $jty-cnt;
 }
 
-@function calculaRem($size){
+@function calculaRem($size) {
     @return math.div($size, 16px) * 1rem;
 }
 
-@mixin fontSize($size){
+@mixin fontSize($size) {
     font-size: calculaRem($size);
 }
 
-@mixin for-phone-only(){
-    @media (max-width: 778.98px){
+@mixin for-phone-only() {
+    @media (max-width: 778.98px) {
         @content;
     }
 }
 
-@mixin for-desktop-only(){
-    @media (min-width: 779px){
+@mixin for-desktop-only() {
+    @media (min-width: 779px) {
         @content;
     }
 }
 
-body{
+@import 'profile.scss', 'content.scss';
+
+.container {
     font-family: $Font-Rubik;
+    font-weight: 400;
+    background-color: $Very-dark-blue;
+    color: white;
+    min-height: 100vh;
+    @include flx(justify-content, center);
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.content{
+    margin: 25px;
+    
+
+    @include for-desktop-only(){
+        display: flex;
+        align-items: center;
+        margin: 0;
+        max-width: 1200px;
+
+        display: grid;
+        grid-template-areas: "profile content";
+        grid-template-columns: 250px 2fr;
+        gap: 20px;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+
+    a {
+        color: hsl(228, 45%, 44%);
+    }
 }

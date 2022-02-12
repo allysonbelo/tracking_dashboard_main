@@ -1,0 +1,134 @@
+.content__main {
+    grid-area: content;
+    display: grid;
+    row-gap: 30px;
+    grid-template-areas:
+        "Work"
+        "Play"
+        "Study"
+        "Exercise"
+        "Social"
+        "Self";
+
+    @include for-desktop-only {
+        grid-template-areas:
+            "Work Play Study"
+            "Exercise Social Self";
+            column-gap: 20px;
+            align-items: center;
+            height: 100%;
+    }
+
+    .box {
+        height: 140px;
+        border-radius: 15px;
+        display: flex;
+        align-items: flex-end;
+
+        @include for-desktop-only{
+            height: 230px;
+            width: 100%;
+        }
+
+        &__content {
+            width: 100%;
+            border-radius: 13px;
+            background-color: $Dark-blue;
+            padding: 25px;
+
+            @include for-desktop-only{
+                height: 135px;
+                width: 200px;
+            }
+
+            .title {
+                display: block;
+                @include fontSize(20px);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+
+                &:after {
+                    content: url(../images/icon-ellipsis.svg);
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    height: 10px;
+                }
+
+                &:hover {
+                    filter: contrast(200%);
+                }
+            }
+
+            .wrapper__calendar {
+                @include flx(justify-content, space-between);
+                align-items: center;
+
+                @include for-desktop-only{
+                    flex-direction: column;
+                    align-items: flex-start
+                }
+
+                .hours {
+                    @include fontSize(25px);
+                    font-weight: 300;
+
+                    @include for-desktop-only{
+                        @include fontSize(42px);
+                    }
+                }
+
+                .calendar {
+                    @include fontSize(14px);
+                    color: $Pale-Blue;
+
+                    @include for-desktop-only(){
+                        @include fontSize(14px);
+                        margin-top: 20px;
+                    }
+                }
+            }
+
+        }
+
+        &:nth-child(1) {
+            background: $Light-orange url(../images/icon-work.svg) no-repeat top -10px right 20px;
+            grid-area: Work;
+        }
+
+        &:nth-child(2) {
+            background: $Soft-blue url(../images/icon-play.svg) no-repeat top -10px right 20px;
+            grid-area: Play;
+        }
+
+        &:nth-child(3) {
+            background: $Light-red url(../images/icon-study.svg) no-repeat top -10px right 20px;
+            grid-area: Study;
+        }
+
+        &:nth-child(4) {
+            background: $Lime-green url(../images/icon-exercise.svg) no-repeat top -10px right 20px;
+            grid-area: Exercise;
+        }
+
+        &:nth-child(5) {
+            background: $Desaturated-blue url(../images/icon-social.svg) no-repeat top -10px right 20px;
+            grid-area: Social;
+        }
+
+        &:nth-child(6) {
+            background: $Soft-orange url(../images/icon-self-care.svg) no-repeat top -10px right 20px;
+            grid-area: Self;
+        }
+
+        &:last-child {
+            margin-bottom: 40px;
+
+            @include for-desktop-only{
+                margin: 0;
+            }
+        }
+    }
+}
