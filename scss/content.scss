@@ -10,6 +10,14 @@
         "Social"
         "Self";
 
+    @include for-tablet-only{
+        grid-template-areas:
+        "Work Play" 
+        "Study Exercise" 
+        "Social Self";
+        gap: 20px;
+    }
+
     @include for-desktop-only {
         grid-template-areas:
             "Work Play Study"
@@ -25,6 +33,10 @@
         display: flex;
         align-items: flex-end;
 
+        @include for-tablet-only{
+            // width: 50%;
+        }
+        
         @include for-desktop-only{
             height: 230px;
             width: 100%;
@@ -38,7 +50,6 @@
 
             @include for-desktop-only{
                 height: 135px;
-                width: 200px;
             }
 
             .title {

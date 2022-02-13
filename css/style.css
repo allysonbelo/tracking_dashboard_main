@@ -5,7 +5,7 @@
   margin-bottom: 30px;
   height: 100%;
 }
-@media (min-width: 779px) {
+@media (min-width: 1200px) {
   .content__profile {
     margin-bottom: 0px;
   }
@@ -18,7 +18,7 @@
   align-items: center;
   padding: 30px 20px;
 }
-@media (min-width: 779px) {
+@media (min-width: 1200px) {
   .content__profile .profile {
     flex-direction: column;
     align-items: flex-start;
@@ -33,7 +33,7 @@
   border: 3px solid white;
   border-radius: 500px;
 }
-@media (min-width: 779px) {
+@media (min-width: 1200px) {
   .content__profile .profile .wrapper-image img {
     max-width: 80px;
     margin-bottom: 40px;
@@ -52,12 +52,15 @@
   font-size: 1.375rem;
   font-weight: 300;
 }
-@media (min-width: 779px) {
+@media (min-width: 1200px) {
   .content__profile .profile .wrapper-content .user {
     font-size: 2.625rem;
     color: #bdc1ff;
     padding-bottom: 40px;
   }
+}
+.content__profile .active-menu {
+  color: white;
 }
 .content__profile .days {
   height: 60px;
@@ -66,7 +69,7 @@
   align-items: center;
   color: #bdc1ff;
 }
-@media (min-width: 779px) {
+@media (min-width: 1200px) {
   .content__profile .days {
     flex-direction: column;
     align-items: flex-start;
@@ -91,7 +94,13 @@
   row-gap: 30px;
   grid-template-areas: "Work" "Play" "Study" "Exercise" "Social" "Self";
 }
-@media (min-width: 779px) {
+@media (min-width: 778.98px) {
+  .content__main {
+    grid-template-areas: "Work Play" "Study Exercise" "Social Self";
+    gap: 20px;
+  }
+}
+@media (min-width: 1200px) {
   .content__main {
     grid-template-areas: "Work Play Study" "Exercise Social Self";
     column-gap: 20px;
@@ -105,7 +114,7 @@
   display: flex;
   align-items: flex-end;
 }
-@media (min-width: 779px) {
+@media (min-width: 1200px) {
   .content__main .box {
     height: 230px;
     width: 100%;
@@ -117,10 +126,9 @@
   background-color: #1c1f4a;
   padding: 25px;
 }
-@media (min-width: 779px) {
+@media (min-width: 1200px) {
   .content__main .box__content {
     height: 135px;
-    width: 200px;
   }
 }
 .content__main .box__content .title {
@@ -146,7 +154,7 @@
   justify-content: space-between;
   align-items: center;
 }
-@media (min-width: 779px) {
+@media (min-width: 1200px) {
   .content__main .box__content .wrapper__calendar {
     flex-direction: column;
     align-items: flex-start;
@@ -156,7 +164,7 @@
   font-size: 1.5625rem;
   font-weight: 300;
 }
-@media (min-width: 779px) {
+@media (min-width: 1200px) {
   .content__main .box__content .wrapper__calendar .hours {
     font-size: 2.625rem;
   }
@@ -165,7 +173,7 @@
   font-size: 0.875rem;
   color: #bdc1ff;
 }
-@media (min-width: 779px) {
+@media (min-width: 1200px) {
   .content__main .box__content .wrapper__calendar .calendar {
     font-size: 0.875rem;
     margin-top: 20px;
@@ -198,7 +206,7 @@
 .content__main .box:last-child {
   margin-bottom: 40px;
 }
-@media (min-width: 779px) {
+@media (min-width: 1200px) {
   .content__main .box:last-child {
     margin: 0;
   }
@@ -220,13 +228,20 @@
 
 .content {
   margin: 25px;
+  width: 80%;
 }
-@media (min-width: 779px) {
+@media (min-width: 778.98px) {
+  .content {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
   .content {
     display: flex;
     align-items: center;
     margin: 0;
     max-width: 1200px;
+    width: 100%;
     display: grid;
     grid-template-areas: "profile content";
     grid-template-columns: 250px 2fr;

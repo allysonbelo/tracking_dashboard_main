@@ -60,6 +60,10 @@
         }
     }
 
+    .active-menu{
+        color: white;
+    }
+
     .days{
         height: 60px;
         @include flx(justify-content, space-around);

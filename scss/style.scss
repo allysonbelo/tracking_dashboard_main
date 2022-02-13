@@ -30,13 +30,19 @@ sans-serif;
 }
 
 @mixin for-phone-only() {
-    @media (max-width: 778.98px) {
+    @media (min-width: 300px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-only() {
+    @media (min-width: 778.98px) {
         @content;
     }
 }
 
 @mixin for-desktop-only() {
-    @media (min-width: 779px) {
+    @media (min-width: 1200px) {
         @content;
     }
 }
@@ -58,13 +64,18 @@ sans-serif;
 
 .content{
     margin: 25px;
-    
+    width: 80%;
+
+    @include for-tablet-only(){
+        width: 100%;
+    }
 
     @include for-desktop-only(){
         display: flex;
         align-items: center;
         margin: 0;
         max-width: 1200px;
+        width: 100%;
 
         display: grid;
         grid-template-areas: "profile content";
